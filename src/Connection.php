@@ -10,7 +10,7 @@ class Connection {
     public static function getConnection() {
         try {
             if (!self::$instance) {
-                self::$instance = new mysqli('localhost', 'root', 'root', 'eatclean');
+                self::$instance = new mysqli('localhost', 'lolo', 'lolo', 'eatclean');
             }
 
             return self::$instance;

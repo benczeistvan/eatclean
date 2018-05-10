@@ -13,10 +13,16 @@ class App {
     }
 
     public function renderPage() {
-        $data = $this->loadData();
+        if ($_SERVER['REQUEST_URI'] === '/fetchTable') {
+            $fetcher = new TableFetcher();
+            echo $fetcher->getTableData();
+        }
+        else {
+            $data = $this->loadData();
 
-        $page = include __DIR__ . '/../template/html.php';
+            $page = include __DIR__ . '/../template/html.php';
 
-        print $page;
+            print $page;
+        }
     }
 }
